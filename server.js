@@ -16,6 +16,7 @@ app.prepare().then(() => {
 
   io.on("connection", (socket) => {
     // ...
+    console.log("Hello hola khake feem rahiye kade sek de hora maal puya rayya kade sekde")
   });
 
   httpServer
