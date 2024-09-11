@@ -7,7 +7,7 @@ import { Info } from "./components/ui/info";
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div className="bg-black ">
     <div className="bg-black flex flex-row  items-center">
       <BackgroundLines className="w-1/2">
         <div className="flex flex-row justify-center items-center h-screen">
@@ -19,15 +19,11 @@ export default function Home() {
       </div>
     </div>
     <div className="mt-40">
-        <Info title={"about"} content={"Slate Chat offers a unique way to connect with friends through real-time collaboration, allowing users to draw and chat simultaneously. With an array of easy-to-use drawing tools, including various brushes, colors, and shapes, you can create and share your sketches effortlessly."}/>
+        <Info title={"About"} content={"Slate Chat offers a unique way to connect with friends through real-time collaboration, allowing users to draw and chat simultaneously. With an array of easy-to-use drawing tools, including various brushes, colors, and shapes, you can create and share your sketches effortlessly."}/>
     </div>
     <div className="mt-40">
-
-      this
-      
-
+        <Info title={"Blazing fast"} content={"Slate Chat is a cutting-edge messaging application built with Next.js and powered by WebSockets, ensuring blazing-fast real-time communication. By leveraging Next.js's server-side rendering capabilities and WebSockets for instant, bidirectional data transfer, Slate Chat delivers a seamless and responsive user experience."}/>
     </div>
-
     </div>
 
   );
