@@ -1,30 +1,34 @@
-import { createServer } from "node:http";
-import next from "next";
-import { Server } from "socket.io";
+import WebSocket, { WebSocketServer } from 'ws';
+import http from 'http';
 
-const dev = process.env.NODE_ENV !== "production";
-const hostname = "localhost";
-const port = 3000;
-// when using middleware `hostname` and `port` must be provided below
-const app = next({ dev, hostname, port });
-const handler = app.getRequestHandler();
+//create  a simple http server
+const server = http.createServer(function(request,response) {
+    console.log((new Date()) + ' Received request for ' + request.url);
+    response.end("hi there");
+});
 
-app.prepare().then(() => {
-  const httpServer = createServer(handler);
+//all the websocket logic starts here
+const wss = new WebSocketServer({ server });
 
-  const io = new Server(httpServer);
+let usercount=0
 
-  io.on("connection", (socket) => {
-    // ...
-    console.log("Hellohhhhh")
+wss.on('connection', function connection(ws) {
+  ws.on('error', console.error);
+
+  ws.on('message', function message(data, isBinary) {
+    wss.clients.forEach(function each(client) {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(data, { binary: isBinary });
+      }
+    });
   });
 
-  httpServer
-    .once("error", (err) => {
-      console.error(err);
-      process.exit(1);
-    })
-    .listen(port, () => {
-      console.log(`> Ready on http://${hostname}:${port}`);
-    });
+  ws.send('Hello! Message From Server!!');
+  ++usercount;
+  console.log('user connected',usercount)
+
+});
+
+server.listen(8080, function() {
+    console.log((new Date()) + ' Server is listening on port 8080');
 });
