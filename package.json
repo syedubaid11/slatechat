@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "ws":"node server.cjs",
+    "ws": "node server.cjs",
     "lint": "next lint"
   },
   "dependencies": {
@@ -17,10 +17,11 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
     "lucide-react": "^0.439.0",
-    "next": "14.2.8",
+    "next": "^14.2.12",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
-    "shadcn-ui": "^0.9.0",
+    "shadcn-ui": "^0.2.3",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
     "tailwind-merge": "^2.5.2",
