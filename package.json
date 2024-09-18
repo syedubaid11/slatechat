@@ -4,9 +4,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start",
+    "ws":"node server.cjs",
     "lint": "next lint"
   },
   "dependencies": {
@@ -36,7 +37,7 @@
     "typescript": "^5"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
-  "main": "server.js",
+  "main": "server.cjs",
   "author": "",
   "license": "ISC"
 }
