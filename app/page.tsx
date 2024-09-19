@@ -11,7 +11,7 @@ export default function Home() {
   console.log(JSON.stringify(session.data?.user))
 
   return (
-    <div className="bg-black ">
+    <div className="bg-black m-0 p-0">
     <div className="bg-black flex flex-row  items-center">
       <BackgroundLines className="w-1/2">
         <div className="flex flex-row justify-center items-center h-screen">
