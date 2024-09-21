@@ -8,6 +8,14 @@ import {useSession} from "next-auth/react"
 
 export default function Home() {
   const session=useSession();
+  if(session){
+    console.log("logged in")
+
+  }
+  else{
+    console.log("not logged")
+  }
+
   console.log(JSON.stringify(session.data?.user))
 
   return (

@@ -9,8 +9,8 @@ const Canvas: React.FC = () => {
     useEffect(() => {
         const canvas = canvasRef.current;
         if (canvas) {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = 800;
+            canvas.height = 600;
             contextRef.current = canvas.getContext('2d');
             if (contextRef.current) {
                 contextRef.current.lineCap = 'round';
@@ -48,7 +48,7 @@ const Canvas: React.FC = () => {
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            style={{ border: '1px solid black' , margin:"10px" }}
+            style={{ border: '1px solid black'}}
         />
     );
 };
