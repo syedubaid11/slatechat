@@ -1,37 +1,34 @@
-import CredentialsProvider from 'next-auth/providers/credentials';
+import { Lucia } from "lucia";
+import { PrismaAdapter } from "@lucia-auth/adapter-prisma";
+import { PrismaClient } from "@prisma/client";
 
-export const NEXT_AUTH_CONFIG = {
-    providers: [
-      CredentialsProvider({
-          name: 'Credentials',
-          credentials: {
-            username: { label: 'email', type: 'text', placeholder: '' },
-            password: { label: 'password', type: 'password', placeholder: '' },
-          },
-          async authorize(credentials: any) {
-  
-              return {
-                  id: "user1",
-                  name: "asd",
-                  userId: "asd",
-                  email: "ramdomEmail"
-              };
-          },
-        }),
-    ],
-    secret: process.env.NEXTAUTH_SECRET,
-    callbacks: {
-        jwt: async ({ user, token }: any) => {
-        if (user) {
-            token.uid = user.id;
-        }
-        return token;
-        },
-      session: ({ session, token, user }: any) => {
-          if (session.user) {
-              session.user.id = token.uid
-          }
-          return session
-      }
-    },
-  }
+
+const client = new PrismaClient();
+const adapter = new PrismaAdapter(client.session, client.user);
+
+
+export const lucia = new Lucia(adapter, {
+	sessionCookie: {
+		attributes: {
+			// set to `true` when using HTTPS
+			secure: process.env.NODE_ENV === "production"
+		}
+	},
+    getUserAttributes: (attributes) => {
+		return {
+			// attributes has the type of DatabaseUserAttributes
+			username: attributes.username
+		};
+	}
+});
+
+declare module "lucia" {
+	interface Register {
+		Lucia: typeof lucia;
+		DatabaseUserAttributes: DatabaseUserAttributes;
+	}
+}
+
+interface DatabaseUserAttributes {
+	username: string;
+}

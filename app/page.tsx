@@ -2,9 +2,10 @@
 
 import { BackgroundLines } from "./components/ui/background";
 import { HomeHero } from "./components/ui/home";
-import { Homeauth } from "./components/ui/homeauth";
 import { Info } from "./components/ui/info";
-import {useSession} from "next-auth/react"
+import {signIn, useSession} from "next-auth/react"
+import Link from "next/link";
+
 
 export default function Home() {
   const session=useSession();
@@ -16,8 +17,6 @@ export default function Home() {
     console.log("not logged")
   }
 
-  console.log(JSON.stringify(session.data?.user))
-
   return (
     <div className="bg-black ">
     <div className="bg-black flex flex-row  items-center">
@@ -27,7 +26,10 @@ export default function Home() {
         </div>
       </BackgroundLines>
       <div className="p-10 rounded-lg border w-max ml-auto mr-40">
-        <Homeauth/>
+        {!session?(<Link href="/canvas"><button className="text-white">Start drawing</button></Link>):(<Link href="/auth/signin">
+        <button className="text-white"onClick={()=>signIn(undefined,{callbackUrl:"/canvas"})}>Sign In</button>
+      </Link>)}
+      
       </div>
     </div>
     <div className="mt-40 text-green-300 ml-10 mr-10">
