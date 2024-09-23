@@ -1,6 +1,7 @@
-import { useRouter } from "next/router";
-import type { FormEvent } from "react";
+"use client"
 
+import { useRouter } from "next/navigation";
+import type { FormEvent } from "react";
 export default function Page() {
 	const router = useRouter();
 
