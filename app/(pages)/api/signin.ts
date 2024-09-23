@@ -1,7 +1,9 @@
 import { verify } from "@node-rs/argon2";
 import { lucia } from "@/lib/auth";
-
 import type { NextApiRequest, NextApiResponse } from "next";
+import { PrismaClient } from "@prisma/client";
+
+const prisma=new PrismaClient();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	if (req.method !== "POST") {
@@ -30,10 +32,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		return;
 	}
 
-	const existingUser = await db
-		.table("username")
-		.where("username", "=", username.toLowerCase())
-		.get();
+	const existingUser = await prisma.user.findUnique({
+        where: {
+          username: username.toLowerCase(),
+        },
+      });
 	if (!existingUser) {
 		// NOTE:
 		// Returning immediately allows malicious actors to figure out valid usernames from response times,
@@ -50,7 +53,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		return;
 	}
 
-	const validPassword = await verify(existingUser.password, password, {
+	const validPassword = await verify(existingUser.password_hash, password, {
 		memoryCost: 19456,
 		timeCost: 2,
 		outputLen: 32,

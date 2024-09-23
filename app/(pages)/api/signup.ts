@@ -1,9 +1,11 @@
 import { lucia } from "@/lib/auth";
 import { generateIdFromEntropySize } from "lucia";
 import { hash } from "@node-rs/argon2";
-import { Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 import type { NextApiRequest, NextApiResponse } from "next";
+
+const prisma=new PrismaClient();
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

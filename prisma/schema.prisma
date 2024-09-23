@@ -15,7 +15,9 @@ datasource db {
 
 model User {
   id       String    @id
+  username String    @unique   
   sessions Session[]
+  password_hash String 
 }
 
 model Session {
