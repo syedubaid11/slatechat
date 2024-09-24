@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.6.1",
     "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.19.1",
     "@radix-ui/react-label": "^2.1.0",
@@ -19,6 +20,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
     "lucia": "^3.2.0",
+    "lucia-auth": "^1.8.0",
     "lucide-react": "^0.439.0",
     "next": "^14.2.12",
     "next-auth": "^4.24.7",
@@ -32,7 +34,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/react": "18.3.9",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.8",
