@@ -8,7 +8,7 @@ const Chat: React.FC = () => {
 
   useEffect(() => {
     // Create WebSocket connection
-    const ws = new WebSocket('ws://localhost:3001'); // Change to your server URL
+    const ws = new WebSocket('ws://localhost:3000'); // Change to your server URL
 
     // Listen for messages
     ws.onmessage = (event) => {
