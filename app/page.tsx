@@ -22,6 +22,9 @@ export default function Home() {
     <div className="mt-40 text-pink-300 ml-10 mr-10">
         <Info title={"Blazing fast"} content={"Slate Chat is a cutting-edge messaging application built with Next.js and powered by WebSockets, ensuring blazing-fast real-time communication. By leveraging Next.js's server-side rendering capabilities and WebSockets for instant, bidirectional data transfer, Slate Chat delivers a seamless and responsive user experience."}/>
     </div>
+    <div className="mt-40 text-pink-300 ml-10 mr-10">
+        <Info title={"Contribute"} content={"Feel free to contribute and help the project grow"}/>
+    </div>
     </div>
 
   );
