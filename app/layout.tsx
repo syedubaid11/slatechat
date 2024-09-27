@@ -7,8 +7,8 @@ import {
   SignedIn,
   SignedOut,
   UserButton
-} from '@clerk/nextjs'
-
+} from '@clerk/nextjs';
+import WebSocketInitializer from './WebSocketInitializer';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,27 +28,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ClerkProvider>
-      <html lang="en">
-        <body>
           <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
             <UserButton />
           </SignedIn>
+          <WebSocketInitializer />
           {children}
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

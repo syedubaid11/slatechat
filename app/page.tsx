@@ -3,7 +3,6 @@
 import { BackgroundLines } from "./components/ui/background";
 import { HomeHero } from "./components/ui/home";
 import { Info } from "./components/ui/info";
-import Link from "next/link";
 
 
 export default function Home() {
