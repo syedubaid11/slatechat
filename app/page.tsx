@@ -15,11 +15,11 @@ export default function Home() {
           <HomeHero/>
         </div>
       </BackgroundLines>
-      <div className="text-white border-2 border-white ml-60 p-4 rounded-xl hover-pointer">
+      <div className="text-white border-2 border-white ml-60 p-4 rounded-xl cursor-pointer">
           <SignedOut>
               <SignInButton />
           </SignedOut>
-          <SignedIn>
+          <SignedIn >
               Go to Canvas
           </SignedIn>
         </div>
