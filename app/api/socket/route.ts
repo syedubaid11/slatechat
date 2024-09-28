@@ -10,7 +10,7 @@ export const config = {
 
 // Type assertion for res.socket to include the 'server' property
 export async function GET(req: NextApiRequest, res: NextApiResponse) {
-  try{ console.log("control is herefaasfffffffffffffffffffffffffffffffffffffffff")
+  try{ console.log("control is here")
   // Type assertion to add 'server' property to socket
   const server = (res.socket as any).server;
 

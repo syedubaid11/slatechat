@@ -1,5 +1,6 @@
 "use client"
 
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { BackgroundLines } from "./components/ui/background";
 import { HomeHero } from "./components/ui/home";
 import { Info } from "./components/ui/info";
@@ -14,6 +15,14 @@ export default function Home() {
           <HomeHero/>
         </div>
       </BackgroundLines>
+      <div className="text-white border-2 border-white ml-60 p-4 rounded-xl hover-pointer">
+          <SignedOut>
+              <SignInButton />
+          </SignedOut>
+          <SignedIn>
+              Go to Canvas
+          </SignedIn>
+        </div>
     </div>
     <div className="mt-40 text-green-300 ml-10 mr-10">
         <Info title={"About"} content={"Slate Chat offers a unique way to connect with friends through real-time collaboration, allowing users to draw and chat simultaneously. With an array of easy-to-use drawing tools, including various brushes, colors, and shapes, you can create and share your sketches effortlessly."}/>

@@ -2,14 +2,22 @@
 
 import Canvas from "@/app/components/ui/canvas";
 import Chat from "@/app/components/ui/chat";
+import { SignedIn,SignedOut,RedirectToSignIn } from "@clerk/nextjs";
 
 
 export default function CanvasPage(){
     return(
-        <div className="bg-white flex justify-between">
-        {/*canvas logic goes here*/}
-        <Canvas/>
-        <Chat/>
-        </div>  
+        <>
+        <SignedIn>
+         <div className="bg-white flex justify-between">
+            <Canvas/>
+            <Chat/>
+        </div> 
+        </SignedIn>
+        <SignedOut>
+            <RedirectToSignIn/>
+        </SignedOut>
+        </>
+        
     )
 }
