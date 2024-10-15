@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/arrow"
 import { Righteous } from "next/font/google"
 import { Londrina_Sketch } from "next/font/google"
 import { Info } from "@/components/ui/info"
+import { ChatSvg } from "@/components/ui/chatsvg"
+import { PenSvg } from "@/components/ui/pensvg"
+import { PersonSvg } from "@/components/ui/personsvg"
 
 const righteous=Righteous({
     weight:'400',
@@ -21,7 +24,7 @@ export default function Home(){
     return(
         
         <div className="flex flex-col ">
-            <div className="flex flex-col w-auto h-max border-2">
+            <div className="flex flex-col w-auto h-max">
                 <div className="flex justify-between m-2">
                         <div className={`${londrina.className} text-6xl`}>
                             slatechat
@@ -41,18 +44,27 @@ export default function Home(){
                 </div>
             </div>
 
-            <div className="border-2 h-40 w-auto bg-black ">
-              <Info title={"About"} content={"Slate Chat offers a unique way to connect with friends through real-time collaboration, allowing users to draw and chat simultaneously. With an array of easy-to-use drawing tools, including various brushes, colors, and shapes, you can create and share your sketches effortlessly."}/>
+            <div className={`${londrina.className} text-4xl h-80 m-20 w-auto border border-black rounded-2xl`}>
+                Features
+                <div className="flex flex-row justify-center border h-60">
+                    <div className="border w-60 mr-20">
+                        <div><ChatSvg/></div>
+                        <div><p className="text-2xl">Communicate instantly with your team members through our lightning-fast chat system.</p></div>
+                        
+                    </div>
+                    <div className="border w-60 mr-20"><PenSvg/></div>
+                    <div className="border w-60 mr-20"><PersonSvg/></div>
+                </div>
+
 
             </div>
             <div className="border-2 h-40 w-auto bg-black ">
-              <Info title={"Blazing fast"} content={"Slate Chat is a cutting-edge messaging application built with Next.js and powered by WebSockets, ensuring blazing-fast real-time communication. By leveraging Next.js's server-side rendering capabilities and WebSockets for instant, bidirectional data transfer, Slate Chat delivers a seamless and responsive user experience."}/>
 
             </div>
             <div className="border-2 h-40 bg-black">
-              <Info title={"Contribute"} content={"Feel free to contribute and help the project grow"}/>
 
             </div>
+    
 
         </div>
     )
