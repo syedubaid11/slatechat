@@ -5,7 +5,6 @@ import { Londrina_Sketch } from "next/font/google"
 import { ChatSvg } from "@/components/ui/chatsvg"
 import { PenSvg } from "@/components/ui/pensvg"
 import { PersonSvg } from "@/components/ui/personsvg"
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation"
 
 
