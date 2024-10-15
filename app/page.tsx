@@ -1,9 +1,9 @@
 "use client"
 
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { BackgroundLines } from "./components/ui/background";
-import { HomeHero } from "./components/ui/home";
-import { Info } from "./components/ui/info";
+import { BackgroundLines } from "../components/ui/background";
+import { HomeHero } from "../components/ui/home";
+import { Info } from "../components/ui/info";
 
 
 export default function Home() {

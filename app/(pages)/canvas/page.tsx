@@ -1,7 +1,7 @@
 "use client"
 
-import Canvas from "@/app/components/ui/canvas";
-import Chat from "@/app/components/ui/chat";
+import Canvas from "@/components/ui/canvas";
+import Chat from "@/components/ui/chat";
 import { SignedIn,SignedOut,RedirectToSignIn } from "@clerk/nextjs";
 
 
