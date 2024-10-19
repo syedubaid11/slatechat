@@ -43,7 +43,7 @@ export default function Home(){
                 </div>
             </div>
 
-            <div className={`${londrina.className} text-4xl h-80 m-20 w-auto border border-black rounded-2xl`}>
+            <div className={`${londrina.className} mt-[400px] text-4xl h-80 m-20 w-auto border border-black rounded-2xl`}>
                 <h1 className="ml-6">Features</h1>
                 <div className="flex flex-row justify-center h-60">
                     <div className="w-60 mr-20">
