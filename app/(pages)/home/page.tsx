@@ -43,25 +43,24 @@ export default function Home(){
                 </div>
             </div>
 
-            <div className={`${londrina.className} mt-[400px] text-4xl h-80 m-20 w-auto border border-black rounded-2xl`}>
+            <div className={`${londrina.className} mt-[400px] text-4xl h-80 m-40 w-auto border border-black rounded-2xl`}>
                 <h1 className="ml-6">Features</h1>
-                <div className="flex flex-row justify-center h-60">
-                    <div className="w-60 mr-20">
+                <div className="flex flex-col md:flex-row justify-center h-60">
+                    <div className="w-60 mr-20 flex flex-col items-center border-r-[1px]">
                         <div><ChatSvg/></div>
-                        <div><p className={`${righteous.className} text-xl`}>Communicate instantly with your team members through our lightning-fast chat system.</p></div>
-                        
+                        <div><p className={`${righteous.className} text-xl mt-4`}>Communicate instantly with your team members through our lightning-fast chat system.</p></div>
                     </div>
-                    <div className=" w-60 mr-20">
+                    <div className=" w-60 mr-20 flex flex-col items-center">
                         <div><PenSvg/></div>
                         <div>
-                        <p className={`${righteous.className} text-xl`}>Bring your ideas to life with our shared canvas. Draw, sketch, and create together in real-time.</p></div>
+                        <p className={`${righteous.className} text-xl mt-4`}>Bring your ideas to life with our shared canvas. Draw, sketch, and create together in real-time.</p></div>
                         </div>
-                    <div className=" w-60 mr-20">
+                    <div className=" w-60 mr-20 flex flex-col items-center border-l-[1px] pl-6">
                         <div>
                            <PersonSvg/>
                         </div>
                         <div>
-                           <p className={`${righteous.className} text-xl`}>Dedicated workspaces for seamless collaboration</p>
+                           <p className={`${righteous.className} text-xl mt-4`}>Dedicated workspaces for seamless collaboration</p>
                         </div>
                         </div>
                 </div>
