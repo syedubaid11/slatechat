@@ -1,0 +1,18 @@
+
+
+.fadein{
+    animation: 1.4s cubic-bezier(0.76, 0, 0.24, 1) 0ms 1 normal forwards running fadeInBlur;
+}
+
+@keyframes fadeInBlur{
+    from{
+    opacity: 0;
+    transform: translateX(-50px);
+    filter: blur(10px);
+
+    }
+    to{
+        transform: none;
+    }
+    
+}
