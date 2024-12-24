@@ -8,6 +8,7 @@ import { PersonSvg } from "@/components/ui/personsvg"
 import { useRouter } from "next/navigation"
 import { Navbar } from "@/components/ui/navbar"
 import '../app/globals.css'
+import { Hero } from "@/components/ui/hero"
 
 
 const righteous=Righteous({
@@ -24,23 +25,15 @@ const londrina=Londrina_Sketch({
 export default function Home() {
   const router=useRouter();
   return (
-    <div className="h-screen w-full">
-    <Navbar/>
-    <div>
-
-    </div>
-
-
-
-
-
-    </div>
-
-
-
-
-
-
+     <>
+     <Navbar/>
+     
+     
+     <Hero/>
+     </>
+     
+  )
+}
      
     // <div className="flex flex-col ">
     // <div className="flex flex-col w-auto h-max">
@@ -90,5 +83,4 @@ export default function Home() {
     // <div className="border-2 h-40 bg-black">
 
     // </div>
-  );
-}
+ 

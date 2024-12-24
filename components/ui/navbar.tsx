@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
         
         <div className='relative'>
 
-        <div className="absolute w-full h-max bg-black text-white items-center z-20 flex">
+        <div className="absolute w-full h-max bg-black text-white items-center z-20 flex p-[10px]">
 
             <div className='flex flex-row px-3 py-5 items-center'>
 
@@ -21,7 +21,7 @@ export const Navbar: React.FC = () => {
                     <div className={`w-[16px] h-[1px] bg-white transition-transform duration-300 rounded-lg ${isOpen?'w-[30px] -rotate-45 -translate-2':''}`}></div>
                 </div>
 
-                <div className="ml-[10px] fadein ">
+                <div className="ml-[10px] fadein font-righteous">
                     slatechat
                 </div>
             </div>
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
       
         </div>
         {isOpen&&
-        <div className='flex flex-col slide-right absolute h-screen w-screen backdrop-blur-md top-0 z-10 bg-black/80 text-white bg-transparent'>
+        <div className='flex flex-col slide-right absolute h-screen w-screen backdrop-blur-md top-0 z-10 bg-black/80 text-white bg-transparent smooth-transition'>
             <div>
             <div className="mt-[90px]"></div>
 
