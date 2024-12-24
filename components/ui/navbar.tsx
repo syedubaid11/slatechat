@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
         
         <div className='relative'>
 
-        <div className="absolute w-full h-max bg-black text-white items-center z-20">
+        <div className="absolute w-full h-max bg-black text-white items-center z-20 flex">
 
             <div className='flex flex-row px-3 py-5 items-center'>
 
@@ -24,6 +24,11 @@ export const Navbar: React.FC = () => {
                 <div className="ml-[10px] fadein ">
                     slatechat
                 </div>
+            </div>
+
+            <div className='ml-auto'>
+                <button className='py-1 px-4 bg-white text-black mr-[5px] border rounded-[5px] '>Log in</button>
+
             </div>
         
 
@@ -59,6 +64,8 @@ export const Navbar: React.FC = () => {
              </div>   
             
         </div>
+
+
 }
         
         

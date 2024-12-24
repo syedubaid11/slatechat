@@ -18,7 +18,7 @@
 }
 
 .slide-right{
-    animation-duration: 0.8s;
+    animation-duration: 0.5s;
     animation-name: slide-right;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
