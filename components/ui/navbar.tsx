@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './component.css';
 
+
+
 export const Navbar: React.FC = () => {
     const [isOpen,setisOpen]=useState(false);
 
@@ -25,11 +27,15 @@ export const Navbar: React.FC = () => {
                     slatechat
                 </div>
             </div>
+            
 
-            <div className='ml-auto'>
-                <button className='py-1 px-4 bg-white text-black mr-[5px] border rounded-[5px] '>Log in</button>
+            {/* logic of sigin / signou
+            {session ?<div>user logged in</div> : <div className='ml-auto'>
+                <button onClick={()=>signIn()}className='py-1 px-4 bg-white text-black mr-[5px] border rounded-[5px] '>Log in</button>
+            </div>} */}
 
-            </div>
+           
+            
         
 
         <div className='flex space-between gap-[5px]'>

@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation"
 import { Navbar } from "@/components/ui/navbar"
 import '../app/globals.css'
 import { Hero } from "@/components/ui/hero"
-import { useSession,signIn,signOut } from "next-auth/react"
 
 
 const righteous=Righteous({
@@ -21,21 +20,15 @@ const londrina=Londrina_Sketch({
 })
 
 export default function Home() {
-  const {data:session}=useSession();
-  if(session){
-    console.log('user is logged in')
-  }
-  else{
-    console.log('user isnt logged in')
-  }
+  
   const router=useRouter();
   return (
-     <>
+     <div className="flex flex-col">
      <Navbar/>
-     
-     
-     <Hero/>
-     </>
+      <div className="mt-20">
+        <Hero/>
+      </div>
+     </div>
      
   )
 }

@@ -1,5 +1,4 @@
 "use client"
-
 import Canvas from "@/components/ui/canvas";
 import Chat from "@/components/ui/chat";
 import { FloatingNav } from "@/components/ui/floating-navbar";

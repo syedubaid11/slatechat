@@ -3,7 +3,13 @@ import localFont from "next/font/local";
 import { Roboto } from 'next/font/google'
 import "./globals.css";
 import WebSocketInitializer from './WebSocketInitializer';
-import SessionWrapper from "@/components/SessionWrapper";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 
  
 const roboto = Roboto({
@@ -20,16 +26,21 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <SessionWrapper>
-    <html lang="en">
-      <body className={`${roboto.className}`}>
-          <WebSocketInitializer />
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
           {children}
-      </body>
-    </html>
-    </SessionWrapper>
-  );
+        </body>
+      </html>
+    </ClerkProvider>
+  )
 }
