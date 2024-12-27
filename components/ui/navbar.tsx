@@ -17,8 +17,8 @@ export const Navbar: React.FC = () => {
 
                 <div onClick={toggleClick} className="desktop:hidden ml-[10px] fadein">
                     <div className={`w-[30px] h-[1px] bg-white transition-transform duration-300 rounded-lg ${isOpen?'rotate-45 translate-y-1.5':''}`}></div>
-                    <div className={`w-[30px] h-[1px] bg-white my-1 transition-all duration-300 rounded-lg opacity-100 ${isOpen?'opacity-0':'opacity-1'}`}></div>
-                    <div className={`w-[16px] h-[1px] bg-white transition-transform duration-300 rounded-lg ${isOpen?'w-[30px] -rotate-45 -translate-2':''}`}></div>
+                    <div className={`w-[30px] h-[1px] bg-white my-1 transition-all duration-300 rounded-lg ${isOpen?'opacity-0':'opacity-1'}`}></div>
+                    <div className={`w-[16px] h-[1px] bg-white transition-transform duration-300 rounded-lg ${isOpen?'w-[30px] -rotate-45 -translate-y-1':''}`}></div>
                 </div>
 
                 <div className="ml-[10px] fadein font-righteous">
