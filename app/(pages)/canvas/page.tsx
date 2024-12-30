@@ -3,10 +3,13 @@ import Canvas from "@/components/ui/canvas";
 import Chat from "@/components/ui/chat";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { SignedIn,SignedOut,RedirectToSignIn } from "@clerk/nextjs";
+import { useState } from "react";
+
 
 
 export default function CanvasPage(){
-    const navItems = [
+    const [isopen,setOpen]=useState(false);
+        const navItems = [
         {
           name: "Home",
           link: "/",
@@ -24,12 +27,17 @@ export default function CanvasPage(){
       ];
     return(
         <>
-        <FloatingNav  navItems={navItems} />
         <SignedIn>
-         <div className="bg-white flex justify-between">
+         <div >
+         <FloatingNav navItems={navItems} />
+
+
             <Canvas/>
-            <Chat/>
+            <button onClick={()=>setOpen(!isopen)} className="absolute bottom-0 right-2 border-2 p-1 rounded-xl">{isopen?`Close`:`Chat!`}</button>
+            {isopen&&
+            <Chat/>}
         </div> 
+
         </SignedIn>
         <SignedOut>
             <RedirectToSignIn/>
