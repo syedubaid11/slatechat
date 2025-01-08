@@ -13,17 +13,17 @@ export const Navbar: React.FC = () => {
         
         <div className='relative'>
 
-        <div className="absolute w-full h-max bg-black text-white items-center z-20 flex p-[10px]">
+        <div className="absolute w-full h-max bg-transparent text-black items-center z-20 flex p-[10px]">
 
             <div className='flex flex-row px-3 py-5 items-center'>
 
                 <div onClick={toggleClick} className="desktop:hidden ml-[10px] fadein">
-                    <div className={`w-[30px] h-[1px] bg-white transition-transform duration-300 rounded-lg ${isOpen?'rotate-45 translate-y-1.5':''}`}></div>
-                    <div className={`w-[30px] h-[1px] bg-white my-1 transition-all duration-300 rounded-lg ${isOpen?'opacity-0':'opacity-1'}`}></div>
-                    <div className={`w-[16px] h-[1px] bg-white transition-transform duration-300 rounded-lg ${isOpen?'w-[30px] -rotate-45 -translate-y-1':''}`}></div>
+                    <div className={`w-[30px] h-[1px] bg-black transition-transform duration-300 rounded-lg ${isOpen?'rotate-45 translate-y-1.5':''}`}></div>
+                    <div className={`w-[30px] h-[1px] bg-black my-1 transition-all duration-300 rounded-lg ${isOpen?'opacity-0':'opacity-1'}`}></div>
+                    <div className={`w-[16px] h-[1px] bg-black transition-transform duration-300 rounded-lg ${isOpen?'w-[30px] -rotate-45 -translate-y-1':''}`}></div>
                 </div>
 
-                <div className="ml-[10px] fadein font-righteous">
+                <div className="ml-[10px] fadein font-righteous bg-gradient-to-b from-slate-50 to-slate-900 bg-clip-text text-transparent text-[50px]">
                     slatechat
                 </div>
             </div>

@@ -1,13 +1,16 @@
 export const Hero=()=>{
     return(
-        <div className="h-max w-full bg-neutral-950">
-            <div className="text-[40px] flex flex-col ml-[20px] text-white">
-                <div>Seamless</div>
-                <div>Realtime</div>
-                <div>Chatting & Drawing</div>
-
+        <div className="flex flex-col">
+            <div className="">Discover seamless and fast experience</div>
+            <div className="flex flex-col">
+                <div>
+                    Safe authenticaition
+                </div>
+                <div>
+                    Connect with other users
+                </div>
             </div>
-            
+             
         </div>
     )
 }
