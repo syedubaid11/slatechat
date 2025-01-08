@@ -23,7 +23,7 @@ export default function Home() {
   
   const router=useRouter();
   return (
-     <div className="flex flex-col">
+     <div className="flex flex-col bg-neutral-900 h-screen">
      <Navbar/>
       <div className="mt-20">
         <Hero/>

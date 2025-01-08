@@ -22,9 +22,9 @@ export const Navbar: React.FC = () => {
                 </div>
 
                 <div onClick={toggleClick} className="desktop:hidden fadein">
-                    <div className={`w-[30px] h-[1px] bg-black transition-transform duration-300 rounded-lg ${isOpen?'rotate-45 translate-y-1.5':''}`}></div>
-                    <div className={`w-[30px] h-[1px] bg-black my-1 transition-all duration-300 rounded-lg ${isOpen?'opacity-0':'opacity-1'}`}></div>
-                    <div className={`w-[16px] h-[1px] bg-black transition-transform duration-300 rounded-lg ${isOpen?'w-[30px] -rotate-45 -translate-y-1':''}`}></div>
+                    <div className={`w-[30px] h-[1px] bg-slate-50 transition-transform duration-300 rounded-lg ${isOpen?'rotate-45 translate-y-1.5':''}`}></div>
+                    <div className={`w-[30px] h-[1px] bg-slate-50 my-1 transition-all duration-300 rounded-lg ${isOpen?'opacity-0':'opacity-1'}`}></div>
+                    <div className={`w-[16px] h-[1px] bg-slate-50 transition-transform duration-300 rounded-lg ${isOpen?'w-[30px] -rotate-45 -translate-y-1':''}`}></div>
                 </div>
 
                 
