@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
         </div>
         {isOpen&&
         <div className='flex flex-col slide-right absolute h-screen w-screen backdrop-blur-md top-0 z-10 bg-black/80 text-white bg-transparent smooth-transition'>
-            <div>
+            <div className='p-[20px]'>
             <div className="mt-[90px]"></div>
 
                 <div className='text-4xl'>Navigate</div>
