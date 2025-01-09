@@ -1,3 +1,5 @@
+import { Cards } from "./cards"
+
 export const Hero=()=>{
     return(
         <div className="flex flex-col mt-20 items-center">
@@ -9,6 +11,10 @@ export const Hero=()=>{
                 <div>
                 </div>
             </div>
+            <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
 
         </div>
     )
