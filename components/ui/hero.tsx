@@ -11,6 +11,14 @@ export const Hero=()=>{
                 <div>
                 </div>
             </div>
+            <div className="h-[150px] w-max flex items-center justify-center gap-[10px]">
+                    <div className="text-white tracking-wide">
+                        <button className="border border-gray-800 p-[10px] rounded-xl">Get Started</button>
+                    </div>
+                    <div className="text-white tracking-wide">
+                     <button className="border border-gray-800 p-[10px] rounded-xl">Contribute</button>
+                    </div>
+            </div>
             <Cards/>
             <Cards/>
             <Cards/>
