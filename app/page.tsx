@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import { Navbar } from "@/components/ui/navbar"
 import '../app/globals.css'
 import { Hero } from "@/components/ui/hero"
+import { Footer } from "@/components/footer"
 
 
 const righteous=Righteous({
@@ -28,6 +29,7 @@ export default function Home() {
       <div className="mt-20">
         <Hero/>
       </div>
+      <Footer/>
      </div>
      
   )
