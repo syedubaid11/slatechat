@@ -15,6 +15,10 @@ export default function CanvasPage(){
         <>
         <SignedIn>
           <div >
+            <div className="flex justify-center">
+              <FloatingNav/>
+
+            </div>
               <Canvas/>
               <button onClick={()=>setOpen(!isopen)} className="absolute bottom-0 right-2 border-2 p-1 rounded-xl">{isopen?`Close`:`Chat!`}</button>
               {isopen&&
