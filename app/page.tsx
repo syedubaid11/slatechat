@@ -7,6 +7,8 @@ import { Navbar } from "@/components/ui/navbar"
 import '../app/globals.css'
 import { Hero } from "@/components/ui/hero"
 import { Footer } from "@/components/footer"
+import Lenis from "@studio-freight/lenis";
+import { useEffect } from "react"
 
 
 const righteous=Righteous({
@@ -21,66 +23,43 @@ const londrina=Londrina_Sketch({
 })
 
 export default function Home() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,  // Smoothness duration
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),  // Easing function
+      smoothWheel: true, // Smooth wheel scrolling
+      //@ts-ignore
+      smoothTouch: false, // Disable smooth touch scrolling
+    });
+  
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+  
+    requestAnimationFrame(raf);
+  
+    return () => {
+      lenis.destroy(); // Cleanup on component unmount
+    };
+    console.log("working")
+  }, []);
+  
   
   const router=useRouter();
   return (
      <div className="flex flex-col bg-neutral-900 h-full">
-     <Navbar/>
+      
+        <Navbar/>
+
       <div className="mt-20">
         <Hero/>
       </div>
-      <Footer/>
+
+        <Footer/>
      </div>
      
   )
 }
-     
-    // <div className="flex flex-col ">
-    // <div className="flex flex-col w-auto h-max">
-    //     <div className="flex justify-between m-2">
-    //             <div className={`${londrina.className} text-6xl`}>
-    //                 slatechat
-    //             </div>
-    //             <div className="flex text-2xl ">
-    //                 <div className="mr-2">Features</div>
-    //                 <div className="mr-2">About</div>
-    //                 <div>Contact</div>
-    //             </div>
-    //     </div>
 
-    //     <div className={`${righteous.className} flex flex-col items-center mt-40`}>
-    //         <h1 className="text-4xl text-strong m-4">Chat and Draw Together</h1>
-    //         <p className="text-xl mb-4">Experience real-time collaboration like never before with SlateChat. Connect, communicate, and create in one seamless platform.</p>
-    //         <Button onClick={()=>{router.push('/canvas')}}/>
-    //     </div>
-    // </div>
-      
-    // <div className={`${londrina.className} mt-[400px] text-4xl h-80 m-40 w-auto border border-black rounded-2xl`}>
-    //     <div className="flex flex-col md:flex-row justify-center h-60">
-    //         <div className="w-60 mr-20 flex flex-col items-center border-r-[1px]">
-    //             <div><ChatSvg/></div>
-    //             <div><p className={`${righteous.className} text-xl mt-4`}>Communicate instantly with your team members through our lightning-fast chat system.</p></div>
-    //         </div>
-    //         <div className=" w-60 mr-20 flex flex-col items-center">
-    //             <div><PenSvg/></div>
-    //             <div>
-    //             <p className={`${righteous.className} text-xl mt-4`}>Bring your ideas to life with our shared canvas. Draw, sketch, and create together in real-time.</p></div>
-    //             </div>
-    //         <div className=" w-60 mr-20 flex flex-col items-center border-l-[1px] pl-6">
-    //             <div>
-    //                <PersonSvg/>
-    //             </div>
-    //             <div>
-    //                <p className={`${righteous.className} text-xl mt-4`}>Dedicated workspaces for seamless collaboration</p>
-    //             </div>
-    //             </div>
-    //     </div>
-    // </div>
-    
-    // <div className="border-2 h-40 w-auto bg-black ">
-
-    // </div>
-    // <div className="border-2 h-40 bg-black">
-
-    // </div>
  

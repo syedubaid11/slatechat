@@ -1,16 +1,17 @@
 // components/Canvas.tsx
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const Canvas: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const contextRef = useRef<CanvasRenderingContext2D | null>(null);
     const isDrawingRef = useRef<boolean>(false);
+    
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (canvas) {
-            canvas.width = 800;
-            canvas.height = 600;
+            canvas.width = window.innerWidth*0.95;
+            canvas.height = window.innerHeight*0.95;
             contextRef.current = canvas.getContext('2d');
             if (contextRef.current) {
                 contextRef.current.lineCap = 'round';
