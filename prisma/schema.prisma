@@ -7,17 +7,25 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
 model User {
-  id       String    @id
-  username String    @unique   
-  sessions Session[]
-  password_hash String 
+  id          Int         @id @default(autoincrement())
+  username    String
+  email       String      @unique
+  password    String
+  friends     Friend[]    @relation("UserFriends")
 }
 
-model Session {
-  id        String   @id
-  userId    String
-  expiresAt DateTime
-  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+model Friend {
+  id          Int         @id @default(autoincrement())
+  userId      Int
+  friendId    Int
+  status      FriendStatus
+  user        User        @relation("UserFriends", fields: [userId], references: [id])
+  friend      User        @relation("UserFriends", fields: [friendId], references: [id])
+}
+
+enum FriendStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
 }
