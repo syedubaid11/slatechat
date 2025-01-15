@@ -3,14 +3,22 @@ import Canvas from "@/components/ui/canvas";
 import Chat from "@/components/ui/chat";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { SignedIn,SignedOut,RedirectToSignIn } from "@clerk/nextjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from 'axios';
+
 
 
 
 
 export default function CanvasPage(){
     const [isopen,setOpen]=useState(false);
-        
+
+    useEffect(()=>{
+      const fetch=async()=>{
+        axios.get('') //fetch the api from
+
+      }
+    })
     return(
         <>
         <SignedIn>
