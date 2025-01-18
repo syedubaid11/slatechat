@@ -20,7 +20,7 @@
     "clsx": "^2.1.1",
     "express": "^4.21.2",
     "framer-motion": "^11.15.0",
-    "next": "^14.2.12",
+    "next": "^15.1.5",
     "next-ws": "^1.1.1",
     "react": "^18",
     "react-dom": "^18",
