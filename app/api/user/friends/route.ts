@@ -5,7 +5,7 @@ const prisma=new PrismaClient()
 
 export async function POST(req:NextRequest,userId:number,friendId:number){
     const friendRequest=await prisma.friend.create({
-        data:{
+        data:{  
             userId,
             friendId,
             status:'Pending'

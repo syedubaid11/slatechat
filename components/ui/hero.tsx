@@ -1,6 +1,9 @@
 import { Cards } from "./cards"
+import { useRouter } from "next/router"
+
 
 export const Hero=()=>{
+    const router=useRouter();
     return(
         <div className="flex flex-col mt-20 items-center mb-20">
             <div className="text-[21px] bg-gradient-to-r from-gray-50 to-indigo-600 bg-clip-text text-transparent">Seamless and Minimal Experience</div>
