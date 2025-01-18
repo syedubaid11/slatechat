@@ -5,6 +5,8 @@ const Canvas: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const contextRef = useRef<CanvasRenderingContext2D | null>(null);
     const isDrawingRef = useRef<boolean>(false);
+    const isErasingRef=useRef<boolean>(false);
+
     
 
     useEffect(() => {
