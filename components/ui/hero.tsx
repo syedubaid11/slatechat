@@ -21,7 +21,7 @@ export const Hero=()=>{
                         <Link href="/canvas"> <button  className="border border-gray-800 p-[10px] rounded-xl">Get Started</button></Link>
                     </div>
                     <div className="text-white tracking-wide">
-                     <button className="border border-gray-800 p-[10px] rounded-xl">Contribute  .</button>
+                     <button className="border border-gray-800 p-[10px] rounded-xl">Contribute ss .</button>
                     </div>
             </div>
             <div className="">
