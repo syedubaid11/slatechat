@@ -1,1 +1,6 @@
-export const Card1
+export const Card1=()=>{
+    return(
+        <>
+        </>
+    )
+}
