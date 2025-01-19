@@ -1,6 +1,6 @@
 <h1>slatechat</h1>
 
-<h1>Overview></h1>
+<h1>Overview</h1>
 
 SlateChat is a collaborative drawing and chatting application built with Next.js. It allows users to draw on a shared canvas and communicate in real-time through a chat interface. SlateChat is designed for ease of use and provides a seamless experience for users to collaborate creatively.
 Features
