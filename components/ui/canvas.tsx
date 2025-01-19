@@ -28,6 +28,7 @@ const Canvas: React.FC = () => {
         draw(e);
     };
 
+
     const finishDrawing = () => {
         isDrawingRef.current = false;
         contextRef.current?.beginPath();
@@ -39,6 +40,7 @@ const Canvas: React.FC = () => {
         contextRef.current.stroke();
         contextRef.current.beginPath();
         contextRef.current.moveTo(e.clientX, e.clientY);
+        if
     };
 
     const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => startDrawing(e);
