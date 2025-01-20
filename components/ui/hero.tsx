@@ -1,5 +1,9 @@
 import Link from "next/link"
 import { Cards } from "./cards"
+import { Card1 } from "./card1"
+import { Card2 } from "./card2"
+import { Card3 } from "./card3"
+import { Card4 } from "./card4"
 
 
 export const Hero=()=>{
@@ -24,12 +28,22 @@ export const Hero=()=>{
                      <button className="border border-gray-800 p-[10px] rounded-xl">Contribute.</button>
                     </div>
             </div>
-            <div className="">
+            <div className="md:hidden">
                 <Cards/>
                 <Cards/>
                 <Cards/>
             </div>
             <div className="hidden md:block">
+                <div className="flex flex-row gap-[20px]">
+                    <Card1/>
+                    <Card2/>
+                </div>
+                <div>
+                    <Card3/>
+                    <Card4/>
+                </div>
+               
+                
 
 
             </div>
