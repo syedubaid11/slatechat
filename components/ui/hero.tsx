@@ -33,12 +33,12 @@ export const Hero=()=>{
                 <Cards/>
                 <Cards/>
             </div>
-            <div className="hidden md:block">
+            <div className="hidden md:block mt-[180px]">
                 <div className="flex flex-row gap-[20px]">
                     <Card1/>
                     <Card2/>
                 </div>
-                <div>
+                <div className="flex flex-row gap-[20px] mt-[20px]">
                     <Card3/>
                     <Card4/>
                 </div>
