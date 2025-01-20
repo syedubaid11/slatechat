@@ -1,5 +1,7 @@
 // components/Canvas.tsx
+import axios from 'axios';
 import { useRef, useEffect, useState } from 'react';
+import { WebSocket } from 'ws';
 
 const Canvas: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -40,12 +42,22 @@ const Canvas: React.FC = () => {
         contextRef.current.stroke();
         contextRef.current.beginPath();
         contextRef.current.moveTo(e.clientX, e.clientY);
-        if
-    };
-
+    }
     const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => startDrawing(e);
     const handleMouseUp = () => finishDrawing();
     const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => draw(e);
+
+    //api call to websocket server
+    useEffect(()=>{
+        const fetch=async()=>{
+            const socket=new WebSocket('ws://localhost:3000')
+            socket.addEventListener('open',()=>{
+                console.log('connected')
+            })
+        }
+    },[])
+
+
 
     return (
         <canvas
