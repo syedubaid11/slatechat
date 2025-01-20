@@ -51,9 +51,13 @@ const Canvas: React.FC = () => {
     useEffect(()=>{
         const fetch=async()=>{
             const socket=new WebSocket('ws://localhost:3000')
-            socket.addEventListener('open',()=>{
-                console.log('connected')
-            })
+            if(socket){
+                socket.addEventListener('open',()=>{`connected to the server`});
+
+            }
+            else{
+                console.log("error")
+            }
         }
     },[])
 
