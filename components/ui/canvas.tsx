@@ -53,12 +53,14 @@ const Canvas: React.FC = () => {
             const socket=new WebSocket('ws://localhost:3000')
             if(socket){
                 socket.addEventListener('open',()=>{`connected to the server`});
+                console.log('connected to the server');
 
             }
             else{
                 console.log("error")
             }
         }
+        fetch();
     },[])
 
 
