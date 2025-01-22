@@ -14,7 +14,7 @@ export const Hero=()=>{
             <div className="flex flex-col mt-[5px] px-[20px] justify-center items-center">
 
                 <div className="text-white tracking-wide md:text-[18px]">
-                    Safe authenticaition along with customised profiles , connect with other users seamlessly
+                    Safe authenticaition salong with customised profiles , connect with other users seamlessly
                 </div>
                 <div>
                 </div>
