@@ -2,6 +2,7 @@ import Link from "next/link"
 import { currentUser } from "@clerk/nextjs/server"
 import { useEffect } from "react";
 
+
 export const FloatingNav=()=>{
  
   useEffect(()=>{
