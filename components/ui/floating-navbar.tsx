@@ -1,7 +1,20 @@
-"use client"
 import Link from "next/link"
+import { currentUser } from "@clerk/nextjs/server"
+import { useEffect } from "react";
 
 export const FloatingNav=()=>{
+ 
+  useEffect(()=>{
+    const fetch=async()=>{
+      const user=await currentUser();
+    if(!user){console.log('User not logged in')}
+    console.log(user?.imageUrl);
+    }
+    fetch();
+
+  },[])
+  
+
   return(
     <div className="absolute top-[10px] height-[100px] p-[15px] rounded-xl w-[250px] backdrop-blur-1 bg-transparent border flex flex-row gap-[20px]">
       <Link href="/">
