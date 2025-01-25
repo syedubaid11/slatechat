@@ -8,7 +8,7 @@ export const FloatingNav=()=>{
   useEffect(()=>{
     const fetch=async()=>{
       const user=await currentUser();
-    if(!user){console.log('User not logged in')}
+    if(!user){console.log('User not logged intry again ')}
     console.log(user?.imageUrl);
     }
     fetch();
