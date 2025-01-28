@@ -71,7 +71,6 @@ const Canvas: React.FC = () => {
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            style={{ border: '2px solid black'}}
         />
     );
 };

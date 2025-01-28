@@ -7,9 +7,6 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 
 
-
-
-
 export default function CanvasPage(){
     const [isopen,setOpen]=useState(false);
 
@@ -25,12 +22,13 @@ export default function CanvasPage(){
           <div >
             <div className="flex justify-center">
               <FloatingNav/>
+              <button onClick={()=>setOpen(!isopen)} className="absolute top-4 right-2 border-2 p-1 rounded-xl">{isopen?`Close`:`Chat!`}</button>
+              {isopen&&
+              <Chat/>}
 
             </div>
               <Canvas/>
-              <button onClick={()=>setOpen(!isopen)} className="absolute bottom-0 right-2 border-2 p-1 rounded-xl">{isopen?`Close`:`Chat!`}</button>
-              {isopen&&
-              <Chat/>}
+              
           </div> 
         </SignedIn>
         <SignedOut>
