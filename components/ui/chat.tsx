@@ -33,9 +33,9 @@ const Chat: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '600px', margin: '0 auto', position:'absolute' , right:'10px', top:'50px' }}>
       <h1>Chat Room</h1>
-      <div style={{ border: '1px solid #ccc', padding: '10px', height: '400px', overflowY: 'scroll' }}>
+      <div style={{ border: '1px solid #ccc', borderRadius:'20px', padding: '10px', height: '400px', overflowY: 'scroll' }}>
         {messages.map((msg, index) => (
           <div key={index}>{msg}</div>
         ))}

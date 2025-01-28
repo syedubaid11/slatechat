@@ -7,7 +7,6 @@ export const Card1=()=>{
                     <br/>
                     <div className="text-[20px]">
                         Instant connection , with minmal latency
-
                     </div>
 
                 </div>
