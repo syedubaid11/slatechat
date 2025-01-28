@@ -38,6 +38,7 @@ const Canvas: React.FC = () => {
     const eraseDrawing=(e:React.MouseEvent<HTMLCanvasElement>)=>{
         isErasingRef.current=true;
         contextRef.current?.clearRect(e.clientX,e.clientY,10,10);
+        console.log('erasing drawing')
     }
 
 
@@ -101,13 +102,12 @@ const Canvas: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6" />
                 </svg>
             </div>
-            <div className="hover:cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+            <div onClick={()=>{eraseDrawing}}className="hover:cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
                 </svg>
             </div>
         </div>
-        </div>
-x        
+        </div>     
         <canvas
             ref={canvasRef}
             onMouseDown={handleMouseDown}
