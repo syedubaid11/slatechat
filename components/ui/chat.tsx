@@ -8,7 +8,11 @@ const Chat: React.FC = () => {
 
   useEffect(() => {
     // Create WebSocket connection
-    const ws = new WebSocket('ws://localhost:4000'); // Change to your server URL
+    const ws = typeof WebSocket !== 'undefined' ? new WebSocket('ws://localhost:4000') : null;
+    if (!ws) {
+      console.error('WebSocket is not supported in this environment.');
+      return;
+    }
     ws.onopen=()=>{
       console.log('connected')
     }
